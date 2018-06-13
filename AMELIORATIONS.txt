@@ -1,0 +1,4 @@
+- page CONTACT ne s'affiche en fondu sur firefox
+- deux drapeaux apparaissent une fois que la session a expiré
+- formulaire contact gmail
+- page accueil, pouvoir switcher instantanément entre le texte sous la photo et le texte sous la devise

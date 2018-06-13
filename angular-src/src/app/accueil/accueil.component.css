@@ -1,0 +1,148 @@
+/**********
+  ROW ONE 
+***********/
+
+
+/* VISAGE */
+
+img.visage {
+  width: 300px;
+  height: 300px;
+  border-radius: 160px;
+  animation: 4s visage;
+  display: block;
+  margin: 26px auto;
+}
+@media screen and (max-width: 412px) {
+img.visage {
+   width: 200px;
+   height: 200px;
+  }
+}
+
+.row-one img:hover {
+  cursor: pointer;
+}
+
+@keyframes visage {
+  0% {
+    opacity: 0;
+    margin-top: -50px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* DEVISE */
+
+img.devise {
+  width: 100%;
+  display: block;
+  margin: 150px auto;
+  animation: 4s devise;
+}
+
+@keyframes devise {
+  0% {
+    transform: rotate(0deg);
+    width: 0px;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/***********
+ HIDDEN ROW 
+***********/
+
+.hidden-row p {
+  animation: 3s visage;
+  font-family: 'Dancing Script', arial;
+  margin-bottom: 30px;
+  text-align: justify;
+  font-size: 1.4em;
+}
+
+.hidden-row p.motto:before {
+  content: open-quote;
+}
+
+.hidden-row p.motto:after {
+  content: close-quote;
+}
+
+/**********
+  ROW TWO 
+***********/
+
+@keyframes stretching {
+  0% {
+   height: 0;
+   background-color: black;
+   color: white;
+  }
+}
+
+.row-two .col-sm-6 div {
+  border: 1px solid black;
+  height: 400px;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.row-two .col-sm-6 a {
+  text-decoration: none;
+  color: black;
+}
+
+.row-two h2 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.row-two ul li {
+  display: block;
+  margin-bottom: 15px;
+  font-family: 'Dancing Script', arial;
+  font-size: 1.4em;
+}
+
+.row-two ul li:before {
+  content: '\e103';
+  font-family: 'Glyphicons Halflings';
+  float: left;
+  margin-left: -30px;
+  color: green;
+}
+
+.row-two .col-sm-6 div:first-child {
+  animation: 4s stretching;
+}
+.row-two .col-sm-6 div:last-child {
+  animation: 4s stretching;
+}
+
+.row-two .col-sm-6 div p {
+  text-align: center;
+}
+
+.row-two .col-sm-6 .stretching:hover {
+  background-color: #C1E6E9;
+  margin: auto -15px;
+  transition: background-color 2s, margin 1s;
+}
+.row-two .col-sm-6 .adaptee:hover {
+  background-color: #C1E6E9;
+  margin: auto -15px;
+  transition: background-color 2s, margin 1s;
+}
+
+@media screen and (max-width: 767px) {
+.stretching {
+   margin-bottom: 30px;
+  }
+}

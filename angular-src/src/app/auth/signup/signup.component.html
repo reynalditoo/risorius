@@ -1,0 +1,30 @@
+<div>
+	<legend><h2>Inscription</h2></legend>
+	<form (ngSubmit)="onRegisterSubmit(f)" #f="ngForm">
+		<div class="form-group">
+			<label for="name">Nom :</label>
+			<input type="text" name="name" id="name" class="form-control" ngModel required #name="ngModel">
+		</div>
+		<div class="form-group">
+			<label for="pseudo">Pseudo :</label>
+			<input type="text" name="username" id="pseudo" class="form-control" ngModel required #username="ngModel">
+		</div>
+		<div class="form-group">
+			<label for="email">Email :</label>
+			<input type="email" name="email" id="email" class="form-control" ngModel required #email="ngModel"><!-- #email="ngModel" sert à relier le ngIf à cette div -->
+		</div>
+		<span *ngIf="!email.valid && email.touched" class="alert-warning">
+			L'email n'est pas conforme
+		</span>
+		<div class="form-group">
+			<label for="password">Mot de passe :</label>
+			<input type="password" name="password" id="password" class="form-control" minlength="6" ngModel required #password="ngModel"><!-- #password="ngModel" sert à relier le ngIf à cette div -->
+		</div>
+		<span *ngIf="!password.valid && password.touched" class="alert-warning">
+			Le mot de passe doit être composé au minimum de 6 caractères
+		</span>
+		<button class="btn btn-primary" type="submit" [disabled]="!f.valid">Valider l'inscription</button>
+	</form>
+		<p *ngIf="registrationSuccessful" class="col-xs-12 form-control alert-success" style="font-weight: bold; font-size: 10px" #regSuccess>Inscription réussie ! Vous pouvez maintenant vous connecter.</p>
+		<p *ngIf="registrationFailure" class="col-xs-12 form-control alert-danger" style="color: red; font-weight: bold; font-size: 10px" #regFail>Erreur, l'inscription a échoué..</p>
+</div>

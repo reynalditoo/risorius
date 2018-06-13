@@ -1,0 +1,26 @@
+.container-fluid {
+	font-family: 'Delius', arial;
+	padding-right: 0; /* => pour régler le problème de marge décalée */
+}
+
+.col-md-2 {
+	background: url('../assets/wallpaper-menu.jpg');
+	z-index: -1;
+}
+
+@media screen and (min-width: 767px) {
+.col-md-2, .col-md-8 {
+   min-height: 1075px;
+  }
+}
+@media screen and (min-width: 513px) and (max-width: 766px) {
+.col-md-2, .col-md-8 {
+   min-height: 1615px;
+  }
+}
+
+.col-md-8 {
+	box-shadow: -9px 0px 6px -9px, 10px 0px 6px -9px;
+	padding-top: 20px;
+	z-index: 0;
+}

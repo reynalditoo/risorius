@@ -1,0 +1,24 @@
+footer {
+	height: 150px;
+	background-image: url('../../assets/branche.png'), url('../../assets/branche-inversee.png');
+	background-position: left, right;
+	background-size: contain;
+	background-repeat: no-repeat;
+	box-shadow: 0px 0px 30px; 
+}
+
+div {
+	padding: 60px 0;
+}
+
+p {
+	text-align: center;
+	color: black;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 776px) {
+footer {
+   background-image: none;
+  }
+}

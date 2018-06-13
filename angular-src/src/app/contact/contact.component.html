@@ -1,0 +1,72 @@
+<!-- ATTENTION ! Un Viewchild (#machintruc) ne peut pas se retrouver à l'intérieur d'un élément parent ayant aussi un Viewchild -->
+
+<div class="row" id="contact">
+	<div class="col-sm-offset-1 col-sm-10 col-xs-12">
+		<h2 style="margin-bottom: 45px" #question>
+			Une question <span class="qst-mark">?</span>
+		</h2>
+		<h3 #joindre>
+			Vous pouvez me joindre...
+		</h3>
+		<h3 style="margin-bottom: 45px" #tel>
+    		...par téléphone au 06 81 40 86 86
+    	</h3>
+		<h3 #msg>
+			...en m'envoyant un gentil message :
+		</h3>
+	</div>
+</div>
+<div class="row" style="margin-bottom: 45px">
+	<div class="col-sm-offset-3 col-sm-6 col-xs-12 form" #form>
+		
+		<form (ngSubmit)="onSubmit()" #f="ngForm">
+		<fieldset>
+			<div class="form-group">
+				<label for="nom-prenom">Vos nom et prénom :</label>
+				<input class="form-control" type="text" id="nom-prenom" name="name" placeholder="Votre nom et prénom" ngModel required #name="ngModel">
+			</div>
+			<span class="help-block" *ngIf="!name.valid && name.touched">
+				Merci d'entrer vos noms et prénoms
+			</span>
+			<div class="form-group">
+				<label for="email">Votre adresse mail :</label>
+				<input class="form-control" type="email" id="email" name="email" placeholder="Votre adresse mail" ngModel email required #email="ngModel">
+			</div>
+			<span class="help-block" *ngIf="email.touched && email.pristine">
+				Merci d'entrer une adresse mail
+			</span>
+			<span class="help-block" *ngIf="!email.valid && email.touched && email.dirty">
+				L'email entrée est incorrecte
+			</span>
+			<div class="form-group">
+				<label for="message">Votre message :</label>
+				<textarea class="form-control" type="text" id="message" name="message" rows="10" placeholder="Votre message..." ngModel required #message="ngModel"></textarea>
+			</div>
+			<span class="help-block" *ngIf="!message.valid && message.touched">
+				Merci d'entrer un message
+			</span><br>
+			<button class="btn btn-info" type="submit" [disabled]="!f.valid">Envoyer</button> 		
+		</fieldset>
+		</form>
+		
+		<p *ngIf="msgSent" style="display: inline; color: green; font-weight: bold" #isSent>Votre message a bien été envoyé !</p>
+		<p *ngIf="msgNotSent" style="color: red; font-weight: bold" #isNotSent>Oups il y a eu une erreur, votre message n'a pas pu être envoyé..</p>
+	</div>
+</div>
+<div class="row">
+		<div class="col-sm-offset-1 col-sm-10 col-xs-12 last" #last>
+			<p>
+				...pour les plus téméraires passer directement me voir aux horaires suivantes :
+			</p>
+			<article>
+				<ul>
+					<li>
+						Le mercredi de 9h00 à 10h30 pour la gymnastique douce et stretching
+					</li>
+					<li>
+						Le mercredi de 10h30 à 11h30 pour la gymnastique douce adaptée
+					</li>
+				</ul>
+			</article>
+		</div>
+</div>

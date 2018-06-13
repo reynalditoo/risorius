@@ -1,0 +1,54 @@
+#contact {
+	margin-top: 40px;
+}
+
+h2 {
+	text-align: center;
+}
+
+h2, h3, .form, .last {
+	animation: ducon 3s;
+	display: none;
+}
+
+@keyframes ducon {
+	0% {
+		opacity: 0;
+	}
+}
+
+.qst-mark {
+	display: inline-block;
+	animation: shivering .5s;
+	animation-iteration-count: 3;
+}
+
+@keyframes shivering {
+	from {
+		transform: rotate(360deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+
+.last p {
+	font-size: 24px;
+}
+
+.last li {
+	font-size: 18px;
+}
+
+/* .ng-touched.ng-invalid.ng-dirty {
+	background-color: red;
+} */
+
+span.help-block {
+	color: red;
+	display: inline-block;
+}
+
+/* input.ng-invalid.ng-touched {
+  border: 1px solid red;
+} */

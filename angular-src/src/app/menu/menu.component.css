@@ -1,0 +1,81 @@
+.row {
+	margin-left: 0;
+	margin-bottom: 35px;
+}
+
+.container-fluid {
+	background-color: #FFFFFF;
+}
+
+nav {
+	height: 50px;
+	box-shadow: 0px 0px 30px; 
+}
+
+@media screen and (min-width: 790px) and (max-width: 895px) {
+  li a {
+   font-size: 0.8em;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 790px) {
+  li a {
+   font-size: 0.7em;
+  }
+}
+
+.imglink {
+	margin: 0 15px;
+}
+
+img {
+	width: 92px;
+	height: 48px;
+	border-radius: 150px;
+}
+
+/* FAIRE PIVOTER LE LOGO (img)
+img:hover {
+	display: inline-block;
+	animation: spinning .5s;
+}
+
+@keyframes spinning {
+	from {
+		transform: rotate(360deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+} */
+
+#myNavbar ul:first-child li {
+	text-transform: uppercase;
+	font-family: 'Delius', arial;
+	font-size: 1.1em;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+#myNavbar ul:first-child li:hover,
+#myNavbar ul:first-child li.activee a {
+	box-shadow: 0px 0px 30px; 
+	transition: box-shadow 0.5s;
+	border-radius: 10px;
+}
+
+.wlc-msg {
+	position: absolute;
+	top: 52px;
+    padding-top: 8px;
+    border-radius: 10px;
+    animation: 2s wlc;
+}
+@keyframes wlc {
+	0% {
+		top: 0;
+	}
+} 
+.wlc-msg p {
+	text-align: center;
+	font-weight: bold;
+} 

@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+.container-fluid.row {
+	/* min-height: 1000px; */
+	font-family: 'Delius', arial;
+	/* min-width: 900px; */
+	padding-right: 0;
+	margin-right: 0;
+}

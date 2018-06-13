@@ -1,0 +1,52 @@
+<div class="row row-one">
+	<div class="col-sm-6 col-xs-12">
+		<img (mouseenter)="bioON()" (mouseleave)="bioOFF()" class="visage" src="../../assets/visage_mum.png">
+    </div>
+	<div class="col-sm-6 col-xs-12">
+		<img (mouseenter)="mottoON()" (mouseleave)="mottoOFF()" class="devise" src="../../assets/devise.png">
+	</div>
+</div>
+
+<div class="row hidden-row">
+	<div>
+		<p *ngIf="bio" class="bio" class="col-sm-offset-1 col-sm-5 col-xs-12">
+			Prof de gym depuis 20 ans <br><br>
+			Ancienne judokate <br><br>
+			Passionnée de théâtre <br><br>
+			Grande amatrice de Salsa
+		</p>
+		<p *ngIf="motto" class="motto" class="col-sm-offset-6 col-sm-5 col-xs-12">
+			&nbsp;&nbsp;Un corps qui interprète  un mouvement est un corps qui pense.<br><br>
+			&nbsp;&nbsp;Un corps qui pense le mouvement est un corps qui ressent.<br><br>
+			&nbsp;&nbsp;Un corps qui ressent abordera toujours un mouvement en profondeur.
+		</p>
+	</div>
+</div>
+
+<div class="row row-two">
+	<div class="col-sm-6 col-xs-12">
+		<a routerLink="/infos-pratiques">
+			<div class="stretching">
+				<h2><strong>Gymnastique douce et stretching</strong></h2>
+				<ul>
+					<li>Un corps qui interprète  un mouvement est un corps qui pense</li>
+					<li>Un corps qui pense le mouvement est un corps qui ressent</li>
+					<li>Un corps qui ressent abordera toujours un mouvement en profondeur</li>
+				</ul>
+			</div>
+		</a>
+	</div>
+	<div class="col-sm-6 col-xs-12">
+		<a routerLink="/infos-pratiques">
+			<div class="adaptee">
+				<h2><strong>Gymnastique douce adaptée</strong></h2>
+				<ul>
+					<li>Gymnastique appropriée à l’état de santé de chaque personne</li>
+					<li>Pour un bien-être physique par l’assouplissement des articulations</li>
+					<li>Pour stimuler et tonifier toutes les chaines musculaires</li>
+					<li>Pour travailler l’équilibre</li>
+				</ul>
+			</div>
+		</a>
+	</div>
+</div>

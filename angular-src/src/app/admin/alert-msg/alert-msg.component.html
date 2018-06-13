@@ -1,0 +1,10 @@
+<div class="row">
+	<div class="col-sm-offset-3 col-sm-6 col-xs-12">
+		<form (ngSubmit)="addingMsg(f)" #f="ngForm">
+		<h2>Message d'alerte</h2>
+			<textarea type="text" name="message" class="form-control" cols="10" rows="10" ngModel #msg></textarea>
+	    	<button type="submit" class="col-xs-offset-1 col-xs-4 btn btn-primary">VALIDER</button>
+	    </form>
+	    <button *ngIf="adminService.showingMsg" class="col-xs-4 btn btn-warning" style="margin-left: 44px" (click)="erasingMsg()">EFFACER</button>
+	</div>
+</div>			

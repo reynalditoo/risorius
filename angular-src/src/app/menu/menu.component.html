@@ -1,0 +1,38 @@
+<div class="row">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle hidden-md" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="imglink" routerLink="accueil"><img src="../../assets/logo2.png"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar" [ngbCollapse]="!isCollapsed"> <!-- !isCollapsed => pour que le burger ne se déroule pas automatiquement en rétricissant la fenêtre -->
+          <ul class="nav navbar-nav">
+            <!-- !!! Si on met "active" dans routerLinkActive="active", alors impossible de styliser l'onglet concerné par "li.active a" (la style par défaut de bootstrap (ou angular) prend le dessus, ex: background gris); d'où le changement de "active" en "activee" (aurait pu être autre chose), mtn "li.activee a" peut être stylisé-->
+            <li routerLinkActive="activee"><a routerLink="accueil">Accueil</a></li>
+            <li routerLinkActive="activee"><a routerLink="photos-videos">Photos/Vidéos</a></li>
+            <li routerLinkActive="activee"><a routerLink="infos-pratiques">Infos pratiques</a></li>
+            <li routerLinkActive="activee"><a routerLink="contact">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li *ngIf="!authService.loggedIn()"><a routerLink="authentification" class="glyphicon glyphicon-flag" title="espace administrateur"></a></li>
+            <li *ngIf="authService.loggedIn()"><a routerLink="accueil" (click)="signingOut()">Déconnexion</a></li>
+            <li *ngIf="authService.adminConnected"><a routerLink="alert-msg" class="glyphicon glyphicon-flag"></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+</div>
+<span *ngIf="authService.adminConnected" class="alert-info col-sm-offset-3 col-sm-6 col-xs-12 wlc-msg" appTimeout>
+    <p>Bienvenue super prof !</p>
+</span>
+<span *ngIf="adminService.showingMsg" class="alert-info col-sm-offset-3 col-sm-6 col-xs-12 wlc-msg">
+    <p>{{ adminService.msg }}</p>
+</span>
+<!-- AFFICHER LE NOM DE L'UTILISATEUR CONNECTé SOUS LE MENU
+<span *ngIf="authService.loggedIn() && !authService.adminConnected" class="alert-info col-sm-offset-3 col-sm-6 col-xs-12 wlc-msg" appTimeout>
+    <p>Bienvenue {{ authService.user.username }} !</p>
+</span> -->
